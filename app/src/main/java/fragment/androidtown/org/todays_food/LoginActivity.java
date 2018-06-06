@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                             if(success){
 
                                 String userID = jsonResponse.getString("userID");
-                                Intent intent = new Intent(LoginActivity.this, FoodWorldCupActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.putExtra("userID", userID);
                                 LoginActivity.this.startActivity(intent);
 
