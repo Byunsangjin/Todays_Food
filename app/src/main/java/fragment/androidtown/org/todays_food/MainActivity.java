@@ -12,17 +12,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView idText = (TextView)findViewById(R.id.idText);
-        TextView passwordText = (TextView)findViewById(R.id.passwordText);
         TextView welcomeMessage = (TextView)findViewById(R.id.welcomMessage);
 
         Intent intent = getIntent();
         String userID = intent.getStringExtra("userID");
-        String userPassword = intent.getStringExtra("userPassword");
         String message = "환영합니다, " + userID + "님!";
 
-        idText.setText(userID);
-        passwordText.setText(userPassword);
         welcomeMessage.setText(message);
 
     }
