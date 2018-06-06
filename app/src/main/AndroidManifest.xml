@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".FoodWorldCupActivity"></activity>
+        <activity android:name=".FoodWorldCupActivity" />
+        <activity android:name=".LastResultActivity"></activity>
     </application>
 
 </manifest>

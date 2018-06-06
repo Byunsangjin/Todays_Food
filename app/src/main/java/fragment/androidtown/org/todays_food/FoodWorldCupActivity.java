@@ -97,9 +97,6 @@ public class FoodWorldCupActivity extends AppCompatActivity {
 
             }
         });
-
-
-
     }
 
     public void setImage1Num(){

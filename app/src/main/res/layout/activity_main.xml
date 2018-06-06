@@ -20,7 +20,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/lastResultButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -32,14 +32,14 @@
         android:text="지난 결과 확인" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button"
+        android:layout_alignLeft="@+id/lastResultButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignStart="@+id/button"
+        android:layout_alignStart="@+id/lastResultButton"
         android:layout_marginBottom="76dp"
         android:text="월드컵 시작" />
 
