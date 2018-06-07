@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Random;
 
@@ -44,9 +43,9 @@ public class FoodWorldCupActivity extends AppCompatActivity {
                 tempCount--;
 
                 if(tempCount==1) {
-                    Intent intent = new Intent(FoodWorldCupActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(FoodWorldCupActivity.this, ResultActivity.class);
+                    intent.putExtra("result", images[image1Num]);
                     FoodWorldCupActivity.this.startActivity(intent);
-                    Toast.makeText(getApplicationContext(), "선택완료", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     imageNum[image2Num] = -1;
@@ -74,9 +73,9 @@ public class FoodWorldCupActivity extends AppCompatActivity {
                 tempCount--;
 
                 if(tempCount==1) {
-                    Intent intent = new Intent(FoodWorldCupActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(FoodWorldCupActivity.this, ResultActivity.class);
+                    intent.putExtra("result", images[image2Num]);
                     FoodWorldCupActivity.this.startActivity(intent);
-                    Toast.makeText(getApplicationContext(), "선택완료", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     imageNum[image1Num] = -1;
