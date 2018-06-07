@@ -21,7 +21,8 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".FoodWorldCupActivity" />
-        <activity android:name=".LastResultActivity"></activity>
+        <activity android:name=".LastResultActivity" />
+        <activity android:name=".ResultActivity"></activity>
     </application>
 
 </manifest>
