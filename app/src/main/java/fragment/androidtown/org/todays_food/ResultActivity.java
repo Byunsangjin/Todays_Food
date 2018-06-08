@@ -7,6 +7,7 @@ import android.widget.ImageView;
 
 public class ResultActivity extends AppCompatActivity {
     ImageView resultImage;
+    int[] images = {R.drawable.food1, R.drawable.food2, R.drawable.food3, R.drawable.food4, R.drawable.food5, R.drawable.food6, R.drawable.food7, R.drawable.food8 };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +17,11 @@ public class ResultActivity extends AppCompatActivity {
         resultImage = (ImageView)findViewById(R.id.resultImage);
 
         Intent intent = getIntent();
-        int image = intent.getIntExtra("result", 0);
-        resultImage.setImageResource(image);
+        String userID = intent.getStringExtra("userID");
+        int result = intent.getIntExtra("result", -1);
+        int lastResult = intent.getIntExtra("lastResult", -1);
+
+        resultImage.setImageResource(images[result]);
+
     }
 }

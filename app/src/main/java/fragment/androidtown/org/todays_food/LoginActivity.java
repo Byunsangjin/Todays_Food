@@ -50,10 +50,22 @@ public class LoginActivity extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
-
                                 String userID = jsonResponse.getString("userID");
+                                int result;
+                                int lastResult;
+                                if(jsonResponse.getString("result")=="null")
+                                    result = -1;
+                                else
+                                    result = Integer.parseInt(jsonResponse.getString("result"));
+                                if(jsonResponse.getString("lastResult")=="null")
+                                    lastResult = -1;
+                                else
+                                    lastResult = Integer.parseInt(jsonResponse.getString("lastResult"));
+
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.putExtra("userID", userID);
+                                intent.putExtra("result", result);
+                                intent.putExtra("lastResult", lastResult);
                                 LoginActivity.this.startActivity(intent);
 
                             }
@@ -71,8 +83,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
                 };
-
-
                 LoginRequest loginRequest = new LoginRequest(userID, userPassword, responseLister);
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                 queue.add(loginRequest);

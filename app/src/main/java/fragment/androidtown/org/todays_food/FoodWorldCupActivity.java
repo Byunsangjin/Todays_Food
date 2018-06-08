@@ -6,6 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Random;
 
@@ -17,16 +25,20 @@ public class FoodWorldCupActivity extends AppCompatActivity {
     ImageView imageView2;
     int imageCount = 8;
     int tempCount = 8;
-    int winNum;
     int image1Num, image2Num, temp;
+    String userID;
+    int result, lastResult;
     Random rand = new Random();
-    Boolean flag = true;
     TextView titleText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_world_cup);
+
+        final Intent getIntent = getIntent();
+        userID = getIntent.getStringExtra("userID");
+        lastResult = getIntent.getIntExtra("lastResult", -1 );
 
         imageView1 = (ImageView)findViewById(R.id.imageView1);
         imageView2 = (ImageView)findViewById(R.id.imageView2);
@@ -43,9 +55,10 @@ public class FoodWorldCupActivity extends AppCompatActivity {
                 tempCount--;
 
                 if(tempCount==1) {
-                    Intent intent = new Intent(FoodWorldCupActivity.this, ResultActivity.class);
-                    intent.putExtra("result", images[image1Num]);
-                    FoodWorldCupActivity.this.startActivity(intent);
+                    result = image1Num;
+                    if(lastResult == -1)
+                        lastResult = result;
+                    dbUpdate();
                 }
                 else {
                     imageNum[image2Num] = -1;
@@ -73,9 +86,10 @@ public class FoodWorldCupActivity extends AppCompatActivity {
                 tempCount--;
 
                 if(tempCount==1) {
-                    Intent intent = new Intent(FoodWorldCupActivity.this, ResultActivity.class);
-                    intent.putExtra("result", images[image2Num]);
-                    FoodWorldCupActivity.this.startActivity(intent);
+                    result = image2Num;
+                    if(lastResult == -1)
+                        lastResult = result;
+                    dbUpdate();
                 }
                 else {
                     imageNum[image1Num] = -1;
@@ -136,6 +150,35 @@ public class FoodWorldCupActivity extends AppCompatActivity {
             titleText.setText("결승");
         else
             titleText.setText(tempCount+"강");
+    }
+
+    public void dbUpdate(){
+        Response.Listener<String> responseLister = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try{
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+                    if(success){
+                        Toast.makeText(getApplication(), "확인", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(FoodWorldCupActivity.this, ResultActivity.class);
+                        intent.putExtra("result", result);
+                        intent.putExtra("lastResult", lastResult);
+                        FoodWorldCupActivity.this.startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(getApplication(), "error", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                catch (JSONException e){
+                    e.printStackTrace();
+                }
+
+            }
+        };
+        FoodWorldCupRequest foodWorldCupRequest = new FoodWorldCupRequest(userID, result, lastResult, responseLister);
+        RequestQueue queue = Volley.newRequestQueue(FoodWorldCupActivity.this);
+        queue.add(foodWorldCupRequest);
     }
 
 }

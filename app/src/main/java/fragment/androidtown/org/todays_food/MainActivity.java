@@ -17,7 +17,9 @@ public class MainActivity extends AppCompatActivity {
         TextView welcomeMessage = (TextView)findViewById(R.id.welcomMessage);
 
         Intent intent = getIntent();
-        String userID = intent.getStringExtra("userID");
+        final String userID = intent.getStringExtra("userID");
+        final int result = intent.getIntExtra("result", -1);
+        final int lastResult = intent.getIntExtra("lastResult", -1);
         String message = "환영합니다, " + userID + "님!";
 
         welcomeMessage.setText(message);
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, LastResultActivity.class);
+                intent.putExtra("userID", userID);
+                intent.putExtra("lastResult", lastResult);
                 MainActivity.this.startActivity(intent);
             }
         });
@@ -37,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, FoodWorldCupActivity.class);
+                intent.putExtra("userID", userID);
+                intent.putExtra("lastResult", result);
                 MainActivity.this.startActivity(intent);
             }
         });
