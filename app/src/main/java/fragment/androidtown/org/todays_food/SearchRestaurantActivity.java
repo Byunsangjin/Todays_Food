@@ -637,7 +637,7 @@ public class SearchRestaurantActivity extends AppCompatActivity
 
             new NRPlaces.Builder()
                     .listener(SearchRestaurantActivity.this)
-                    .key("AIzaSyDv5GLdb2i-0fYYg6btvQYtWx4338wCd0k")
+                    .key("API 키 값")
                     .latlng(location.latitude, location.longitude)//현재 위치
                     .radius(1000) //5000 미터 내에서 검색
                     .type(PlaceType.RESTAURANT) //음식점
