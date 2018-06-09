@@ -3,11 +3,14 @@ package fragment.androidtown.org.todays_food;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 public class LastResultActivity extends AppCompatActivity {
     ImageView lastResultImage;
+    Button searchButton;
     int[] images = {R.drawable.food1, R.drawable.food2, R.drawable.food3, R.drawable.food4, R.drawable.food5, R.drawable.food6, R.drawable.food7, R.drawable.food8 };
 
     @Override
@@ -16,13 +19,25 @@ public class LastResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_last_result);
 
         Intent intent = getIntent();
-        int imageNum = intent.getIntExtra("lastResult", -1 );
+        final int imageNum = intent.getIntExtra("lastResult", -1 );
 
         lastResultImage = (ImageView)findViewById(R.id.lastResultImage);
+        searchButton = (Button)findViewById(R.id.searchButton);
+
         if(imageNum==-1)
             Toast.makeText(getApplicationContext(), "선택 한 음식이 아무것도 없습니다", Toast.LENGTH_LONG).show();
         else
             lastResultImage.setImageResource(images[imageNum]);
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LastResultActivity.this, SearchRestaurantActivity.class);
+                intent.putExtra("lastResult", imageNum);
+                LastResultActivity.this.startActivity(intent);
+
+            }
+        });
 
     }
 }

@@ -8,12 +8,13 @@
 
 
     <Button
-        android:id="@+id/gpsButton"
+        android:id="@+id/searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="식당 찾기" />
+        android:text="식당 찾기"
+        />
 
     <ImageView
         android:id="@+id/lastResultImage"

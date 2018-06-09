@@ -4,8 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,18 +13,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView welcomeMessage = (TextView)findViewById(R.id.welcomMessage);
-
         Intent intent = getIntent();
         final String userID = intent.getStringExtra("userID");
         final int result = intent.getIntExtra("result", -1);
         final int lastResult = intent.getIntExtra("lastResult", -1);
-        String message = "환영합니다, " + userID + "님!";
 
-        welcomeMessage.setText(message);
-
-        Button lastResultButton = (Button)findViewById(R.id.lastResultButton);
-        Button startButton = (Button)findViewById(R.id.startButton);
+        ImageButton lastResultButton = (ImageButton)findViewById(R.id.lastResultButton);
+        ImageButton startButton = (ImageButton)findViewById(R.id.startButton);
 
         lastResultButton.setOnClickListener(new View.OnClickListener() {
             @Override

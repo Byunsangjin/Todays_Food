@@ -5,9 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageButton;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -24,8 +23,8 @@ public class LoginActivity extends AppCompatActivity {
 
         final EditText idText = (EditText)findViewById(R.id.idText);
         final EditText passwordText = (EditText)findViewById(R.id.passwordText);
-        final Button loginButton = (Button)findViewById(R.id.loginButton);
-        final TextView registerButton = (TextView)findViewById(R.id.registerButton);
+        final ImageButton loginButton = (ImageButton)findViewById(R.id.loginButton);
+        final ImageButton registerButton = (ImageButton)findViewById(R.id.registerButton);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
