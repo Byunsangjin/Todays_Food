@@ -163,7 +163,7 @@ public class FoodWorldCupActivity extends AppCompatActivity {
                         Toast.makeText(getApplication(), "확인", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(FoodWorldCupActivity.this, ResultActivity.class);
                         intent.putExtra("result", result);
-                        intent.putExtra("lastResult", lastResult);
+                        intent.putExtra("lastResult", result);
                         FoodWorldCupActivity.this.startActivity(intent);
                     }
                     else{
@@ -176,7 +176,7 @@ public class FoodWorldCupActivity extends AppCompatActivity {
 
             }
         };
-        FoodWorldCupRequest foodWorldCupRequest = new FoodWorldCupRequest(userID, result, lastResult, responseLister);
+        FoodWorldCupRequest foodWorldCupRequest = new FoodWorldCupRequest(userID, result, result, responseLister);
         RequestQueue queue = Volley.newRequestQueue(FoodWorldCupActivity.this);
         queue.add(foodWorldCupRequest);
     }

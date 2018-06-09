@@ -3,14 +3,20 @@
     package="fragment.androidtown.org.todays_food">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDv5GLdb2i-0fYYg6btvQYtWx4338wCd0k" />
+
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +28,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".FoodWorldCupActivity" />
         <activity android:name=".LastResultActivity" />
-        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".SearchRestaurantActivity"></activity>
     </application>
 
 </manifest>

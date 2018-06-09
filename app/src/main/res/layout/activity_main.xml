@@ -5,42 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="fragment.androidtown.org.todays_food.MainActivity"
-    android:layout_margin="10dp">
+    android:background="@drawable/back">
 
-    <TextView
+    <ImageView
         android:id="@+id/welcomMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="44dp"
+        android:src="@drawable/title"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
-    <Button
+    <ImageButton
         android:id="@+id/lastResultButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/welcomMessage"
-        android:layout_marginTop="127dp"
+        android:layout_marginTop="45dp"
+        android:background="#00ff0000"
+        android:src="@drawable/lastresultbutton"
         android:text="지난 결과 확인" />
 
-    <Button
+    <ImageButton
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lastResultButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignStart="@+id/lastResultButton"
-        android:layout_marginBottom="76dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lastResultButton"
+        android:layout_marginTop="33dp"
+        android:background="#00ff0000"
+        android:src="@drawable/startworldcupbutton"
         android:text="월드컵 시작" />
 
 </RelativeLayout>
