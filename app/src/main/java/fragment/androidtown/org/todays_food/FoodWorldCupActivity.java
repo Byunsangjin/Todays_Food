@@ -154,6 +154,7 @@ public class FoodWorldCupActivity extends AppCompatActivity {
                     boolean success = jsonResponse.getBoolean("success");
                     if(success){
                         Intent intent = new Intent(FoodWorldCupActivity.this, ResultActivity.class);
+                        intent.putExtra("userID", userID);
                         intent.putExtra("result", result);
                         intent.putExtra("lastResult", result);
                         FoodWorldCupActivity.this.startActivity(intent);

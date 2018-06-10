@@ -85,6 +85,7 @@ public class SearchRestaurantActivity extends AppCompatActivity
     List<Marker> previous_marker = null;
 
     int foodNum, sendNum;
+    String userID;
     String[] foodName = {"족발", "치킨", "보쌈", "중국집", "감자탕", "분식", "햄버거", "냉면" };
 
     @Override
@@ -92,6 +93,7 @@ public class SearchRestaurantActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
+        userID = intent.getStringExtra("userID");
         sendNum = intent.getIntExtra("result", -1);
         if(sendNum != -1)
             foodNum = sendNum;
@@ -109,6 +111,16 @@ public class SearchRestaurantActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 showPlaceInformation(currentPosition);
+            }
+        });
+        ImageButton homeButton = (ImageButton)findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SearchRestaurantActivity.this, MainActivity.class);
+                intent.putExtra("userID", userID);
+                intent.putExtra("lastResult", foodNum);
+                SearchRestaurantActivity.this.startActivity(intent);
             }
         });
 
