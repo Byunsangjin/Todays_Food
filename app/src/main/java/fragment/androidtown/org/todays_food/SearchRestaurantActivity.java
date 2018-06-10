@@ -21,7 +21,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -47,7 +47,6 @@ import java.util.Locale;
 
 import noman.googleplaces.NRPlaces;
 import noman.googleplaces.Place;
-import noman.googleplaces.PlaceType;
 import noman.googleplaces.PlacesException;
 import noman.googleplaces.PlacesListener;
 
@@ -86,6 +85,7 @@ public class SearchRestaurantActivity extends AppCompatActivity
     List<Marker> previous_marker = null;
 
     int foodNum, sendNum;
+    String[] foodName = {"족발", "치킨", "보쌈", "중국집", "감자탕", "분식", "햄버거", "냉면" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +104,7 @@ public class SearchRestaurantActivity extends AppCompatActivity
 
         previous_marker = new ArrayList<Marker>();
 
-        Button button = (Button)findViewById(R.id.button);
+        ImageButton button = (ImageButton)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -639,8 +639,8 @@ public class SearchRestaurantActivity extends AppCompatActivity
                     .listener(SearchRestaurantActivity.this)
                     .key("API 키 값")
                     .latlng(location.latitude, location.longitude)//현재 위치
-                    .radius(1000) //5000 미터 내에서 검색
-                    .type(PlaceType.RESTAURANT) //음식점
+                    .radius(3000) //5000 미터 내에서 검색
+                    .keyword(foodName[foodNum])
                     .build()
                     .execute();
     }

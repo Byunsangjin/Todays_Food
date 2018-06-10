@@ -44,10 +44,7 @@ public class FoodWorldCupActivity extends AppCompatActivity {
         imageView2 = (ImageView)findViewById(R.id.imageView2);
         titleText = (TextView)findViewById(R.id.titleText);
 
-        setImage1Num();
-        setImage2Num();
-        setImage1(image1Num);
-        setImage2(image2Num);
+        setImages(); // 첫화면 뿌려주기
 
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,10 +68,7 @@ public class FoodWorldCupActivity extends AppCompatActivity {
                         init();
                         changeTitle();
                     }
-                    setImage1Num();
-                    setImage2Num();
-                    setImage1(image1Num);
-                    setImage2(image2Num);
+                    setImages(); // 음식 image 바꾸기
                 }
 
             }
@@ -102,10 +96,7 @@ public class FoodWorldCupActivity extends AppCompatActivity {
                         init();
                         changeTitle();
                     }
-                    setImage1Num();
-                    setImage2Num();
-                    setImage1(image1Num);
-                    setImage2(image2Num);
+                    setImages();
                 }
 
             }
@@ -130,14 +121,6 @@ public class FoodWorldCupActivity extends AppCompatActivity {
             }
         }
     }
-
-    public void init(){
-        for(int i=0;i<8;i++){
-            if(imageNum[i] > 0)
-                imageNum[i] -= 100;
-        }
-    }
-
     public void setImage1(int resId){
         imageView1.setImageResource(images[resId]);
     }
@@ -145,6 +128,15 @@ public class FoodWorldCupActivity extends AppCompatActivity {
         imageView2.setImageResource(images[resId]);
     }
 
+    // 각 토너먼트가 끝날때 image값 초기화
+    public void init(){
+        for(int i=0;i<8;i++){
+            if(imageNum[i] > 0)
+                imageNum[i] -= 100;
+        }
+    }
+
+    // 타이틀 변경
     public void changeTitle(){
         if(tempCount==2)
             titleText.setText("결승");
@@ -152,6 +144,7 @@ public class FoodWorldCupActivity extends AppCompatActivity {
             titleText.setText(tempCount+"강");
     }
 
+    // JsonObject를 이용하여 선택 결과 db 저장
     public void dbUpdate(){
         Response.Listener<String> responseLister = new Response.Listener<String>() {
             @Override
@@ -160,7 +153,6 @@ public class FoodWorldCupActivity extends AppCompatActivity {
                     JSONObject jsonResponse = new JSONObject(response);
                     boolean success = jsonResponse.getBoolean("success");
                     if(success){
-                        Toast.makeText(getApplication(), "확인", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(FoodWorldCupActivity.this, ResultActivity.class);
                         intent.putExtra("result", result);
                         intent.putExtra("lastResult", result);
@@ -179,6 +171,14 @@ public class FoodWorldCupActivity extends AppCompatActivity {
         FoodWorldCupRequest foodWorldCupRequest = new FoodWorldCupRequest(userID, result, result, responseLister);
         RequestQueue queue = Volley.newRequestQueue(FoodWorldCupActivity.this);
         queue.add(foodWorldCupRequest);
+    }
+
+    // 음식 image 랜덤으로 바꾸기
+    public void setImages(){
+        setImage1Num();
+        setImage2Num();
+        setImage1(image1Num);
+        setImage2(image2Num);
     }
 
 }

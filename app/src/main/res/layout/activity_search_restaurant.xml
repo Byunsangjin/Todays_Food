@@ -4,19 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <fragment
         android:id="@+id/map"
+        class="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.8"
-        class="com.google.android.gms.maps.MapFragment" />
-    <Button
-        android:text="장소검색"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_weight="0.8" />
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="149dp"
+        android:layout_height="14dp"
+        android:layout_gravity="center"
         android:layout_weight="0.2"
-        android:id="@+id/button"/>
+        android:background="#0000ff00"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/map" />
 
 </LinearLayout>
