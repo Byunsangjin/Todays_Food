@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fragment.androidtown.org.todays_food.FoodWorldCupActivity">
+    tools:context="fragment.androidtown.org.todays_food.FoodWorldCupActivity"
+    android:background="@drawable/back1">
 
     <TextView
         android:id="@+id/titleText"
@@ -13,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="8강"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textStyle="bold" />
 
     <LinearLayout

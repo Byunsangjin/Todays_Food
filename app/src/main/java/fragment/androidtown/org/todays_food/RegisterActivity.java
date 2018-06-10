@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -27,7 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText nameText = (EditText)findViewById(R.id.nameText);
         final EditText ageText = (EditText)findViewById(R.id.ageText);
 
-        Button registerButton = (Button)findViewById(R.id.registerButton);
+        ImageButton registerButton = (ImageButton)findViewById(R.id.registerButton);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
