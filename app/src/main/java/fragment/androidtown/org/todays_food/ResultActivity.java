@@ -20,7 +20,7 @@ public class ResultActivity extends AppCompatActivity {
         resultImage = (ImageView)findViewById(R.id.resultImage);
 
         Intent intent = getIntent();
-        String userID = intent.getStringExtra("userID");
+        final String userID = intent.getStringExtra("userID");
         final int result = intent.getIntExtra("result", -1);
 
         resultImage.setImageResource(images[result]);
@@ -29,6 +29,7 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ResultActivity.this, SearchRestaurantActivity.class);
+                intent.putExtra("userID", userID);
                 intent.putExtra("result", result);
                 ResultActivity.this.startActivity(intent);
             }

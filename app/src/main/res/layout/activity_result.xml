@@ -17,7 +17,9 @@
         android:layout_alignParentTop="true"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteY="0dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"/>
 
     <ImageButton
         android:id="@+id/searchButton"
@@ -25,6 +27,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/searchbutton"
-        android:background="#0000ff00"/>
+        android:background="#0000ff00"
+        android:src="@drawable/searchbutton" />
 </RelativeLayout>

@@ -19,7 +19,9 @@ public class LastResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_last_result);
 
         Intent intent = getIntent();
+        final String userID = intent.getStringExtra("userID");
         final int imageNum = intent.getIntExtra("lastResult", -1 );
+
 
         lastResultImage = (ImageView)findViewById(R.id.lastResultImage);
         searchButton = (ImageButton)findViewById(R.id.searchButton);
@@ -33,6 +35,7 @@ public class LastResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LastResultActivity.this, SearchRestaurantActivity.class);
+                intent.putExtra("userID", userID);
                 intent.putExtra("lastResult", imageNum);
                 LastResultActivity.this.startActivity(intent);
 

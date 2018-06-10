@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="fragment.androidtown.org.todays_food.LastResultActivity"
-    android:layout_margin="10dp"
-    android:background="@drawable/back">
+    android:background="@drawable/back1">
 
 
     <ImageButton

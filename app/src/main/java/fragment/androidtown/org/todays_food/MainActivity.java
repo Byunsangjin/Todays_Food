@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton lastResultButton = (ImageButton)findViewById(R.id.lastResultButton);
         ImageButton startButton = (ImageButton)findViewById(R.id.startButton);
 
+        // 지난 결과 보기 클릭 시
         lastResultButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,12 +32,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // 월드컵 시작 클릭 시
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, FoodWorldCupActivity.class);
                 intent.putExtra("userID", userID);
-                intent.putExtra("lastResult", result);
+                intent.putExtra("result", lastResult);
+                intent.putExtra("lastResult", lastResult);
                 MainActivity.this.startActivity(intent);
             }
         });
