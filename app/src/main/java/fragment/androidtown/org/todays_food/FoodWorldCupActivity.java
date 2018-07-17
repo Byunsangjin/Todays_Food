@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -23,13 +23,13 @@ public class FoodWorldCupActivity extends AppCompatActivity {
     int[] imageNum = {0,1,2,3,4,5,6,7};
     ImageView imageView1;
     ImageView imageView2;
+    LinearLayout container;
     int imageCount = 8;
     int tempCount = 8;
     int image1Num, image2Num, temp;
     String userID;
     int result, lastResult;
     Random rand = new Random();
-    TextView titleText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,8 @@ public class FoodWorldCupActivity extends AppCompatActivity {
 
         imageView1 = (ImageView)findViewById(R.id.imageView1);
         imageView2 = (ImageView)findViewById(R.id.imageView2);
-        titleText = (TextView)findViewById(R.id.titleText);
+
+        container = (LinearLayout)findViewById(R.id.container);
 
         setImages(); // 첫화면 뿌려주기
 
@@ -139,9 +140,9 @@ public class FoodWorldCupActivity extends AppCompatActivity {
     // 타이틀 변경
     public void changeTitle(){
         if(tempCount==2)
-            titleText.setText("결승");
+            container.setBackgroundResource(R.drawable.final_back);
         else
-            titleText.setText(tempCount+"강");
+            container.setBackgroundResource(R.drawable.back_4gang);
     }
 
     // JsonObject를 이용하여 선택 결과 db 저장

@@ -25,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
         lastResultButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LastResultActivity.class);
+                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                 intent.putExtra("userID", userID);
+                intent.putExtra("result", lastResult);
                 intent.putExtra("lastResult", lastResult);
                 MainActivity.this.startActivity(intent);
             }

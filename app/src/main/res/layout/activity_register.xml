@@ -16,7 +16,9 @@
         android:layout_marginTop="153dp"
         android:ems="10"
         android:hint="아이디"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textColorHint="#ffffffff"
+        android:textColor="#ffffffff"/>
 
     <EditText
         android:id="@+id/passwordText"
@@ -31,7 +33,9 @@
         android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="비밀번호"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textColorHint="#ffffffff"
+        android:textColor="#ffffffff"/>
 
     <EditText
         android:id="@+id/nameText"
@@ -46,7 +50,9 @@
         android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="이름"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textColorHint="#ffffffff"
+        android:textColor="#ffffffff"/>
 
     <EditText
         android:id="@+id/ageText"
@@ -61,7 +67,9 @@
         android:layout_marginTop="5dp"
         android:ems="10"
         android:hint="나이"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textColorHint="#ffffffff"
+        android:textColor="#ffffffff"/>
 
     <ImageButton
         android:id="@+id/registerButton"
@@ -72,7 +80,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/ageText"
-        android:src="@drawable/registerbutton"
+        android:src="@drawable/sign_up_button"
         android:layout_marginTop="30dp"
         android:background="#0000ff00"/>
 

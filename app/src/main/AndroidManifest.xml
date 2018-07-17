@@ -15,7 +15,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="API 키 값" />
+            android:value="AIzaSyDv5GLdb2i-0fYYg6btvQYtWx4338wCd0k" />
 
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -26,7 +26,6 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".FoodWorldCupActivity" />
-        <activity android:name=".LastResultActivity" />
         <activity android:name=".ResultActivity" />
         <activity android:name=".SearchRestaurantActivity"></activity>
     </application>

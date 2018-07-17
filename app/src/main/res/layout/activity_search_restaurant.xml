@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/search_back">
 
     <fragment
         android:id="@+id/map"
@@ -27,7 +28,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/map"
+            android:src="@drawable/gps_button"
             android:scaleType="centerInside"
             android:background="#0000ff00"
             />
@@ -37,7 +38,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/main"
+            android:src="@drawable/home_button"
             android:scaleType="centerInside"
             android:background="#0000ff00"
             />

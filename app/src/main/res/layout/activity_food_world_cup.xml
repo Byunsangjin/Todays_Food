@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="fragment.androidtown.org.todays_food.FoodWorldCupActivity"
-    android:background="@drawable/back1">
+    android:background="@drawable/back_8gang"
+    android:id="@+id/container"
+    android:orientation="vertical"
+    >
 
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="8강"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/titleText"
+        android:layout_height="0dp"
         android:layout_centerHorizontal="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="5">
 
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#00ff0000" />
+            android:background="#00ff0000"
+            android:layout_margin="10dp"/>
 
         <ImageView
             android:id="@+id/imageView4"
@@ -38,18 +40,19 @@
             android:layout_height="0dp"
             android:layout_weight="0.2"
             android:background="#00ff0000"
-            android:src="@drawable/vs"/>
+            android:src="@drawable/vs_image" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#00ff0000" />
+            android:background="#00ff0000"
+            android:layout_margin="10dp"/>
 
     </LinearLayout>
 
 
 
 
-</RelativeLayout>
+</LinearLayout>

@@ -1,64 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="fragment.androidtown.org.todays_food.LoginActivity"
-    android:background="@drawable/back">
+    android:background="@drawable/main_back"
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/idText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/passwordText"
-        android:layout_alignLeft="@+id/passwordText"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/passwordText"
-        android:layout_alignStart="@+id/passwordText"
-        android:layout_marginTop="120dp"
-        android:ems="10"
-        android:hint="아이디"
-        android:inputType="textPersonName"
-        android:selectAllOnFocus="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
 
-    <EditText
-        android:id="@+id/passwordText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/registerButton"
-        android:layout_alignLeft="@+id/loginButton"
-        android:layout_alignRight="@+id/registerButton"
-        android:layout_alignStart="@+id/loginButton"
-        android:layout_below="@+id/idText"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="비밀번호"
-        android:inputType="textPassword"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/loginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/registerButton"
-        android:layout_alignStart="@+id/registerButton"
-        android:layout_below="@+id/passwordText"
-        android:src="@drawable/loginbutton"
-        android:text="로그인"
-        android:background="#00ff0000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/registerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/loginButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
-        android:text="회원가입"
-        android:src="@drawable/registerbutton"
-        android:background="#00ff0000"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
 
-</RelativeLayout>
+            <EditText
+                android:id="@+id/idText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:ems="15"
+                android:hint="아이디"
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_margin="10dp"
+                android:textColorHint="#ffffffff"
+                android:textColor="#ffffffff"/>
+
+            <EditText
+                android:id="@+id/passwordText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="15"
+                android:hint="비밀번호"
+                android:inputType="textPassword"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColorHint="#ffffffff"
+                android:textColor="#ffffffff"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00ff0000"
+                android:src="@drawable/login_button"
+                android:layout_marginBottom="10dp" />
+
+            <ImageButton
+                android:id="@+id/registerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00ff0000"
+                android:src="@drawable/sign_up_button"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
